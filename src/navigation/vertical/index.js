@@ -9,7 +9,7 @@ import CreditCardOutline from 'mdi-material-ui/CreditCardOutline'
 import AccountPlusOutline from 'mdi-material-ui/AccountPlusOutline'
 import AlertCircleOutline from 'mdi-material-ui/AlertCircleOutline'
 import GoogleCirclesExtended from 'mdi-material-ui/GoogleCirclesExtended'
-import {FileAccount,MessageFast,Contacts,Poll} from "mdi-material-ui"
+import {FileAccount,MessageFast,Message,Contacts,Poll} from "mdi-material-ui"
 
 const navigation = () => {
   return [
@@ -31,7 +31,7 @@ const navigation = () => {
     },
     {
       title: 'Send SMS',
-      icon: MessageFast,
+      icon: Message,
       path: '/send-sms'
     },
     {
