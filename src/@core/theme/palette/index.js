@@ -1,7 +1,10 @@
 const DefaultPalette = (mode, themeColor) => {
   // ** Vars
+   // const darkColor = '231, 227, 252'
+  // const lightColor = '58, 53, 65'
   const lightColor = '58, 53, 65'
-  const darkColor = '231, 227, 252'
+
+  const darkColor = '0,218,200'
   const mainColor = mode === 'light' ? lightColor : darkColor
 
   const primaryGradient = () => {
@@ -33,8 +36,8 @@ const DefaultPalette = (mode, themeColor) => {
     mode: mode,
     primary: {
       light: '#9E69FD',
-      main: '#9155FD',
-      dark: '#804BDF',
+      main: '#00DAC8',
+      dark: '#99F0E9',
       contrastText: '#FFF'
     },
     secondary: {
@@ -90,8 +93,8 @@ const DefaultPalette = (mode, themeColor) => {
     },
     divider: `rgba(${mainColor}, 0.12)`,
     background: {
-      paper: mode === 'light' ? '#FFF' : '#312D4B',
-      default: mode === 'light' ? '#F4F5FA' : '#28243D'
+      paper: mode === 'light' ? '#FFF' : '#232f3d',
+      default: mode === 'light' ? '#F4F5FA' : '#0B1828'
     },
     action: {
       active: `rgba(${mainColor}, 0.54)`,

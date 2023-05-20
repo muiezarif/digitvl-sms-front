@@ -4,6 +4,7 @@ import Button from '@mui/material/Button'
 import Typography from '@mui/material/Typography'
 import CardContent from '@mui/material/CardContent'
 import { styled, useTheme } from '@mui/material/styles'
+import { useState,useEffect } from 'react'
 
 // Styled component for the triangle shaped background image
 const TriangleImg = styled('img')({
@@ -25,20 +26,35 @@ const Trophy = () => {
   // ** Hook
   const theme = useTheme()
   const imageSrc = theme.palette.mode === 'light' ? 'triangle-light.png' : 'triangle-dark.png'
+  const [currentTime, setCurrentTime] = useState(new Date());
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentTime(new Date());
+    }, 1000);
+
+    // Cleanup the timer when the component unmounts
+    return () => {
+      clearInterval(timer);
+    };
+  }, []);
 
   return (
     <Card sx={{ position: 'relative' }}>
       <CardContent>
-        <Typography variant='h6'>Congratulations John! 🥳</Typography>
+        <Typography variant='h6'>Welcome User! 🥳</Typography>
         <Typography variant='body2' sx={{ letterSpacing: '0.25px' }}>
-          Best seller of the month
+        {currentTime.toLocaleString()}
         </Typography>
-        <Typography variant='h5' sx={{ my: 4, color: 'primary.main' }}>
-          $42.8k
+        <Typography variant='h6' sx={{ my: 4, color: 'primary.main' }}>
+        Phone
         </Typography>
-        <Button size='small' variant='contained'>
+        <Typography variant='h6' sx={{ my: 4, color: 'primary.main' }}>
+        3212481908
+        </Typography>
+        {/* <Button size='small' variant='contained'>
           View Sales
-        </Button>
+        </Button> */}
         <TriangleImg alt='triangle background' src={`/images/misc/${imageSrc}`} />
         <TrophyImg alt='trophy' src='/images/misc/trophy.png' />
       </CardContent>
